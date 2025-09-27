@@ -47,27 +47,30 @@ stop_btn.addEventListener('click', endGame)
 function startRound() {
   if (!gameActive) return;
 
-  let ratsToShow = Math.min(round, 5); // máximo 5 ratos
-  let isMobile = window.innerWidth <= 500;
+  const ratsToShow = Math.min(round, 5); // máximo 5 ratos
+  const isMobile = window.innerWidth <= 500;
+
+  const baseTime = 1000; // tempo inicial desktop
+  const increment = (round - 1) * 100; // incrementa a cada rodada
+  const minMobileTime = 400; // mínimo de tempo no celular
+  const maxDesktopTime = 2000; // máximo de tempo no desktop
+
+  // define tempo visível do rato
+  let timeVisible;
+  if (!isMobile) {
+    timeVisible = Math.min(baseTime + increment, maxDesktopTime); // desktop: mais devagar
+  } else {
+    timeVisible = Math.max(baseTime - increment, minMobileTime); // celular: mais rápido
+  }
 
   let clickedThisRound = 0;
   activeRats = [];
 
-  // Tempo base
-  let baseTime = 1000; 
-  let increment = (round - 1) * 100;
-
-  // Desktop: mais devagar a cada rodada
-  // Mobile: mais rápido a cada rodada (min 200ms)
-  let timeVisible = !isMobile
-      ? baseTime + increment
-      : Math.max(200, baseTime - increment);
-
   // escolher buracos aleatórios
   let available = [...holes];
   for (let i = 0; i < ratsToShow; i++) {
-    let rand = Math.floor(Math.random() * available.length);
-    let hole = available.splice(rand, 1)[0];
+    const rand = Math.floor(Math.random() * available.length);
+    const hole = available.splice(rand, 1)[0];
     showRat(hole, timeVisible);
     activeRats.push(hole);
   }
@@ -88,13 +91,14 @@ function startRound() {
       if (activeRats.includes(hole)) {
         points++;
         score.innerText = points;
-        hole.innerHTML = ''; // remove rato
+        hole.innerHTML = ''; // tira rato
         clickedThisRound++;
         activeRats = activeRats.filter(h => h !== hole);
       }
     };
   });
 }
+
 
 function showRat(hole, duration) {
   let img = document.createElement('img')
