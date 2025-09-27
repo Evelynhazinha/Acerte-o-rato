@@ -45,12 +45,20 @@ start_btn.addEventListener('click', () => {
 stop_btn.addEventListener('click', endGame)
 
 function startRound() {
-  if (!gameActive) return
+ if (!gameActive) return
 
   let ratsToShow = Math.min(round, 5) // máx. 5 ratos
-  let timeVisible = Math.max(300, 1000 + (round - 1) * 100) // cada vez mais rápido
-  let clickedThisRound = 0
+  let isMobile = window.innerWidth <= 500
 
+  let baseTime = 1000 // tempo padrão desktop
+  let increment = (round - 1) * 100
+
+  // Se for celular, deixa mais rápido (menos tempo)
+  let timeVisible = isMobile 
+      ? Math.max(200, baseTime + increment - 300) // mais rápido no celular
+      : Math.max(300, baseTime + increment)       // normal no desktop
+
+  let clickedThisRound = 0
   activeRats = []
 
   // escolher buracos aleatórios
