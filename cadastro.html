@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ACERTE O RATO - CADASTRO</title>
+<title>CADASTRO - ACERTE O RATO</title>
 <style>
 @font-face {
     font-family: 'MinhaFonte';
@@ -68,8 +68,7 @@ body {
 #box input[type="submit"] {
     font-family: 'MinhaFonte', Times, serif;
     background-color: burlywood;
-    
-    border: none;
+    border: rgb(137, 114, 84) 2px solid;
     border-radius: 5px;
     padding: 12px;
     font-size: 18px;
@@ -79,6 +78,33 @@ body {
 
 #box input[type="submit"]:hover {
     background-color: rgb(187, 149, 107);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.voltar {
+    text-align: center;
+    font-family: 'MinhaFonte', Times, serif;
+    background-color: burlywood;
+    border: 2px solid rgb(137, 114, 84);
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 18px;
+    width: 11vh;        
+    float: right;       
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.voltar:hover{
+    background-color: rgb(187, 149, 107);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
 }
 </style>
 </head>
@@ -86,7 +112,7 @@ body {
 <div id="tela">
     <img src="img/rato_logo.png" alt="logo">
     <div id="box">
-        <h2>Cadastro</h2>
+        <h2 style="text-align: center;">Cadastro</h2>
         <form>
             <label for="nome">Nome:</label><br>
             <input type="text" id="nome" name="nome"><br>
@@ -98,29 +124,13 @@ body {
             <input type="email" id="email" name="email"><br>
 
             <label for="senha">Senha:</label><br>
-            <input type="password" id="senha" name="senha"><br>
+            <input type="password" id="senha" name="senha"><br><br>
 
             <input type="submit" value="Cadastrar">
+            <a href="index.html" class="voltar">VOLTAR</a>
         </form>
     </div>
 </div>
-<script>
-document.getElementById.addEventListener("submit", function (event) {
-    event.preventDefault();
-    const nome = document.getElementById("nome").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const senha = document.getElementById("senha").value.trim();
-    if (nome === "" || email === "" || senha === "") {
-        alert("Todos os campos são obrigatórios!");
-        return;
-    }
-    if (senha.length < 6) {
-        alert("A senha deve ter pelo menos 6 caracteres.");
-        return;
-    }
-    alert(`Cadastro realizado com sucesso!\nNome: ${nome}\nE-mail: ${email}`);
-    document.getElementById("cadastroForm").reset();
-});
-</script>
+<script src="scriptcad.js"></script>
 </body>
 </html>

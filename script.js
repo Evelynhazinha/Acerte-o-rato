@@ -85,13 +85,13 @@ function startRound() {
     }
   }, timeVisible + 100);
 
-  // clique conta ponto
+  
   holes.forEach(hole => {
     hole.onclick = () => {
       if (activeRats.includes(hole)) {
         points++;
         score.innerText = points;
-        hole.innerHTML = ''; // tira rato
+        hole.innerHTML = ''; 
         clickedThisRound++;
         activeRats = activeRats.filter(h => h !== hole);
       }
