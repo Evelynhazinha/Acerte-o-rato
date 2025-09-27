@@ -9,6 +9,16 @@ let round = 1
 let gameActive = false
 let activeRats = []
 
+function bloquearZoom() {
+  let meta = document.querySelector("meta[name=viewport]");
+  meta.setAttribute("content", "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no");
+}
+
+function liberarZoom() {
+  let meta = document.querySelector("meta[name=viewport]");
+  meta.setAttribute("content", "width=device-width, initial-scale=1.0");
+}
+
 // martelo segue o cursor
 window.addEventListener('mousemove', (e) => {
   cursor.style.top = e.pageY + "px"

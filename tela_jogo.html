@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
->
 <title>Acerte o Rato</title>
 <style>
 @font-face {
@@ -159,31 +158,44 @@ body {
 }
 
 @media (max-width: 500px) {
+    .tela img {
+        max-width: 80vw;   
+        margin-bottom: 1vh;
+    }
+
+    .score {
+        font-size: 2.5vh;  
+    }
+
     .holes {
         gap: 2vw;
+        width: 95vw;       
+        max-width: none;   
     }
+
     .rat {
-        position: absolute;
-        z-index: 30;
-        width: 7vh;
-        height: 7vh;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        animation: move 0.9s linear;
+        height: 12vh;    
     }
-    .mensagem p {
-        font-size: 3vw;
-    }
-    .mensagem button {
-        font-size: 3vw;
-        padding: 1.5vw 4vw;
-    }
+
     .button {
-        font-size: 3vw;
-        padding: 1vw 3vw;
+        font-size: 4vw;   
+        padding: 2vw 5vw;
+    }
+
+    .mensagem p {
+        font-size: 4vw;
+    }
+
+    .mensagem button {
+        font-size: 4vw;
+        padding: 2vw 5vw;
+    }
+
+    .hammer img {
+        height: 10vh;     
     }
 }
+
 </style>
 </head>
 <body>
