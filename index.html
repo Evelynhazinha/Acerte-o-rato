@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACERTE O RATO</title>
+    <style>
+        
+        @font-face {
+            font-family: 'MinhaFonte';
+            src: url('fonts/Minhafonte2.ttf.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+    }
+
+            #tela {
+            display: flex;
+            flex-direction: column;   
+            justify-content: center;  
+            align-items: center;    
+            height: 100vh;       
+            gap: 20px;             
+        }
+
+        body{
+            background-color: antiquewhite;
+            margin: 0;
+            font-family: 'Minhafonte', Times, serif;
+            font-weight: normal;
+            font-style: normal;
+            background-image: url('img/fundo\ jogo.jpeg');
+            background-size: cover;     
+            background-position: center; 
+            background-repeat: no-repeat; 
+        }
+
+        #container{
+            display: flex;
+            justify-content: center; 
+            align-items: center;     
+            height: calc(100vh - 100px); 
+            gap: 10px;
+            flex-direction: column;
+            margin-top: -400px;
+        }
+
+        #button{
+            background-color: rgb(227, 203, 171);
+            font-family: 'Minhafonte', Times, serif;
+            font-size: 25px;
+            width: 200px;
+            border-radius: 5px;
+            border: solid rgb(197, 165, 124);
+            text-align: center;
+            padding: 15px;
+            box-shadow: 2px 1px 3px 1px rgb(103, 90, 90);
+        }
+        #button:hover{
+            background-color: rgb(208, 180, 147);
+            transform: scale(1.1);
+            transition: 0.2s;
+            border: solid rgb(104, 95, 80);
+        }
+    </style>
+</head>
+<body>
+    <div id="tela">
+        <img src="img/rato_logo.png" alt="logo" width="500px">
+
+            
+        <div id="container">
+            <a href="tela_jogo.html">
+                <button id="button">JOGAR</button>
+            </a>
+            <button id="button">CADASTRAR</button>
+        </div>
+    </div>
+</body>
+</html>
