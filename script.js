@@ -89,7 +89,7 @@ function startRound() {
 
 function showRat(hole, duration) {
   let img = document.createElement('img')
-  img.src = "img/rato.png"
+  img.src = 'https://media.geeksforgeeks.org/wp-content/uploads/20210303135621/rat.png'
   img.classList.add('rat')
   hole.appendChild(img)
 
