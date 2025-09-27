@@ -107,7 +107,7 @@ function restartGame(){
   score.innerText = 0
   points=0
   round=1
-  
+
   start_btn.style.display='inline-block'
   stop_btn.style.display='none'
 }
