@@ -45,53 +45,55 @@ start_btn.addEventListener('click', () => {
 stop_btn.addEventListener('click', endGame)
 
 function startRound() {
- if (!gameActive) return
+  if (!gameActive) return;
 
-  let ratsToShow = Math.min(round, 5) // máx. 5 ratos
-  let isMobile = window.innerWidth <= 500
+  let ratsToShow = Math.min(round, 5); // máximo 5 ratos
+  let isMobile = window.innerWidth <= 500;
 
-  let baseTime = 1000 // tempo padrão desktop
-  let increment = (round - 1) * 100
+  let clickedThisRound = 0;
+  activeRats = [];
 
-  // Se for celular, deixa mais rápido (menos tempo)
-  let timeVisible = isMobile 
-      ? Math.max(200, baseTime + increment - 300) // mais rápido no celular
-      : Math.max(300, baseTime + increment)       // normal no desktop
+  // Tempo base
+  let baseTime = 1000; 
+  let increment = (round - 1) * 100;
 
-  let clickedThisRound = 0
-  activeRats = []
+  // Desktop: mais devagar a cada rodada
+  // Mobile: mais rápido a cada rodada (min 200ms)
+  let timeVisible = !isMobile
+      ? baseTime + increment
+      : Math.max(200, baseTime - increment);
 
   // escolher buracos aleatórios
-  let available = [...holes]
+  let available = [...holes];
   for (let i = 0; i < ratsToShow; i++) {
-    let rand = Math.floor(Math.random() * available.length)
-    let hole = available.splice(rand, 1)[0]
-    showRat(hole, timeVisible)
-    activeRats.push(hole)
+    let rand = Math.floor(Math.random() * available.length);
+    let hole = available.splice(rand, 1)[0];
+    showRat(hole, timeVisible);
+    activeRats.push(hole);
   }
 
   // checar fim da rodada
   setTimeout(() => {
     if (clickedThisRound < ratsToShow) {
-      endGame() // perdeu
+      endGame(); // perdeu
     } else {
-      round++
-      setTimeout(startRound, 800) // próxima rodada
+      round++;
+      setTimeout(startRound, 800); // próxima rodada
     }
-  }, timeVisible + 100)
+  }, timeVisible + 100);
 
   // clique conta ponto
   holes.forEach(hole => {
     hole.onclick = () => {
       if (activeRats.includes(hole)) {
-        points++
-        score.innerText = points
-        hole.innerHTML = '' // tira rato
-        clickedThisRound++
-        activeRats = activeRats.filter(h => h !== hole)
+        points++;
+        score.innerText = points;
+        hole.innerHTML = ''; // remove rato
+        clickedThisRound++;
+        activeRats = activeRats.filter(h => h !== hole);
       }
-    }
-  })
+    };
+  });
 }
 
 function showRat(hole, duration) {
