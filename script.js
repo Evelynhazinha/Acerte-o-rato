@@ -52,7 +52,7 @@ function startRound() {
 
   const baseTime = 1000; // tempo inicial desktop
   const increment = (round - 1) * 100; // incrementa a cada rodada
-  const minMobileTime = 400; // mínimo de tempo no celular
+  const minMobileTime = 700; // mínimo de tempo no celular
   const maxDesktopTime = 2000; // máximo de tempo no desktop
 
   // define tempo visível do rato
