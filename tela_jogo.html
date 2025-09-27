@@ -29,8 +29,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2vh 0;
+    margin: 1vh auto; 
+    width: 100%;
+    height: auto;   
 }
+
 
 .tela img {
     max-width: 90vw;
@@ -142,7 +145,6 @@ body {
     background-color: antiquewhite;
 }
 
-/* animações */
 @keyframes move {
     from { bottom: -60px; }
     to { bottom: 0; }
@@ -152,7 +154,6 @@ body {
     to { transform: rotate(-40deg); }
 }
 
-/* Media Queries para telas pequenas */
 @media (max-width: 500px) {
     .holes {
         gap: 2vw;
