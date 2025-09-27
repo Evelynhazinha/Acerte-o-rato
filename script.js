@@ -49,7 +49,7 @@ function startRound() {
   if (!gameActive) return
 
   let ratsToShow = Math.min(round, 5) // máx. 5 ratos
-  let timeVisible = Math.max(300, 1000 - (round - 1) * 100) // cada vez mais rápido
+  let timeVisible = Math.max(300, 1000 - (round - 1) * 200) // cada vez mais rápido
   let clickedThisRound = 0
 
   activeRats = []
@@ -89,7 +89,7 @@ function startRound() {
 
 function showRat(hole, duration) {
   let img = document.createElement('img')
-  img.src = 'https://media.geeksforgeeks.org/wp-content/uploads/20210303135621/rat.png'
+  img.src = "img/rato_logo.png"
   img.classList.add('rat')
   hole.appendChild(img)
 
