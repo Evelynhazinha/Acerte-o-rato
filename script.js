@@ -46,46 +46,7 @@ stop_btn.addEventListener('click', endGame)
 
 function startRound() {
   if (!gameActive) return
-    if (window.innerWidth <= 500){
-      let ratsToShow = Math.min(round, 5) // máx. 5 ratos
-      let timeVisible = Math.max(300, 1000 - (round - 1) * 200) // cada vez mais rápido
-      let clickedThisRound = 0
 
-      activeRats = []
-
-      // escolher buracos aleatórios
-      let available = [...holes]
-      for (let i = 0; i < ratsToShow; i++) {
-        let rand = Math.floor(Math.random() * available.length)
-        let hole = available.splice(rand, 1)[0]
-        showRat(hole, timeVisible)
-        activeRats.push(hole)
-      }
-
-      // checar fim da rodada
-      setTimeout(() => {
-        if (clickedThisRound < ratsToShow) {
-          endGame() // perdeu
-        } else {
-          round++
-          setTimeout(startRound, 800) // próxima rodada
-        }
-      }, timeVisible + 100)
-
-      // clique conta ponto
-      holes.forEach(hole => {
-        hole.onclick = () => {
-          if (activeRats.includes(hole)) {
-            points++
-            score.innerText = points
-            hole.innerHTML = '' // tira rato
-            clickedThisRound++
-            activeRats = activeRats.filter(h => h !== hole)
-          }
-        }
-      })
-}
-  else{
   let ratsToShow = Math.min(round, 5) // máx. 5 ratos
   let timeVisible = Math.max(300, 1000 + (round - 1) * 100) // cada vez mais rápido
   let clickedThisRound = 0
@@ -123,7 +84,6 @@ function startRound() {
       }
     }
   })
-}
 }
 
 function showRat(hole, duration) {
