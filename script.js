@@ -52,7 +52,7 @@ function startRound() {
 
   const baseTime = 1000; // tempo inicial desktop
   const increment = (round - 1) * 100; // incrementa a cada rodada
-  const minMobileTime = 700; // mínimo de tempo no celular
+  const maxMobileTime = 1500; // mínimo de tempo no celular
   const maxDesktopTime = 2000; // máximo de tempo no desktop
 
   // define tempo visível do rato
@@ -60,7 +60,7 @@ function startRound() {
   if (!isMobile) {
     timeVisible = Math.min(baseTime + increment, maxDesktopTime); // desktop: mais devagar
   } else {
-    timeVisible = Math.max(baseTime - increment, minMobileTime); // celular: mais rápido
+    timeVisible = Math.max(baseTime + increment, maxMobileTime); // celular: mais rápido
   }
 
   let clickedThisRound = 0;
