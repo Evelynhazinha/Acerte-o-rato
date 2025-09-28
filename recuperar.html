@@ -6,13 +6,44 @@
     <title>RECUPERAR SENHA - ACERTE O RATO</title>
     <style>
 
-    @media (max-width: 500px) {
+    @font-face {
+        font-family: 'MinhaFonte';
+        src: url('fonts/Minhafonte2.ttf.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
 
+    .tela img {
+        max-width: 60vw; 
+        height: auto;
+        display: block;
+        margin: 0 auto;  
+        }
+
+    body{
+        background-color: antiquewhite;
+        margin: 0;
+        font-family: 'Minhafonte', Times, serif;
+        font-weight: normal;
+        font-style: normal;
+        background-image: url('img/fundo\ jogo.jpeg');
+        background-size: cover;     
+        background-position: center; 
+        background-repeat: no-repeat; 
+        }    
+
+    @media (max-width: 500px) {
+        .tela img {
+        max-width: 80vw;   
+        margin-bottom: 1vh;
+    }
 }
     </style>
 </head>
 <body>
-    
+    <div id="tela">
+        <img src="img/rato_logo.png" alt="logo">
+    </div>
 </body>
 <script src="scriptrec.js"></script>
 </html>
