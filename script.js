@@ -19,7 +19,6 @@ function liberarZoom() {
   meta.setAttribute("content", "width=device-width, initial-scale=1.0");
 }
 
-// martelo segue o cursor
 window.addEventListener('mousemove', (e) => {
   cursor.style.top = e.pageY + "px"
   cursor.style.left = e.pageX + "px"
@@ -30,7 +29,6 @@ window.addEventListener('click', () => {
   setTimeout(() => cursor.style.animation = '', 101)
 })
 
-// iniciar jogo
 start_btn.addEventListener('click', () => {
   start_btn.style.display = 'none'
   stop_btn.style.display = 'inline-block'
@@ -41,7 +39,6 @@ start_btn.addEventListener('click', () => {
   startRound()
 })
 
-// parar jogo manualmente
 stop_btn.addEventListener('click', endGame)
 
 function startRound() {
@@ -52,7 +49,7 @@ function startRound() {
 
   const baseTime = 1000; // tempo inicial desktop
   const increment = (round - 1) * 100; // incrementa a cada rodada
-  const maxMobileTime = 1500; // mínimo de tempo no celular
+  const maxMobileTime = 1250; // mínimo de tempo no celular
   const maxDesktopTime = 2000; // máximo de tempo no desktop
 
   // define tempo visível do rato
@@ -102,7 +99,7 @@ function startRound() {
 
 function showRat(hole, duration) {
   let img = document.createElement('img')
-  img.src = 'https://media.geeksforgeeks.org/wp-content/uploads/20210303135621/rat.png'
+  img.src = 'img/rato.png'
   img.classList.add('rat')
   hole.appendChild(img)
 
