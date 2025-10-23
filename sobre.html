@@ -1,49 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOBRE - ACERTE O RATO</title>
+    <title>Sobre o Grupo e Jogo</title>
     <style>
-
-    @font-face {
-            font-family: 'MinhaFonte';
-            src: url('fonts/Minhafonte2.ttf.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-    }
-
-            .tela img {
-            max-width: 60vw; 
-            height: auto;
-            display: block;
-            margin: 0 auto;  
+        * {
+            box-sizing: border-box;
         }
-
-    body{
-            background-color: antiquewhite;
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            font-family: 'Minhafonte', Times, serif;
-            font-weight: normal;
-            font-style: normal;
-            background-image: url('img/fundo\ jogo.jpeg');
-            background-size: cover;     
-            background-position: center; 
-            background-repeat: no-repeat; 
+            padding: 20px;
+            background: linear-gradient(135deg, #800080, #4B0082);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-
-    @media (max-width: 500px) {
-        .tela img {
-        max-width: 80vw;   
-        margin-bottom: 1vh;
-    }
-}
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #800080;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+        
+        h2 {
+            color: #4B0082;
+            border-bottom: 2px solid #E6E6FA;
+            padding-bottom: 8px;
+            margin-top: 25px;
+        }
+        
+        .group-member {
+            margin-bottom: 15px;
+            padding: 18px;
+            border: 1px solid #E6E6FA;
+            border-radius: 8px;
+            background-color: #F8F8FF;
+            transition: transform 0.2s ease;
+        }
+        
+        .group-member:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .game-name {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #006400;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #F0FFF0;
+            border-radius: 8px;
+            border: 2px dashed #006400;
+        }
+        
+        .release-date {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #800080;
+            padding: 10px;
+            background-color: #F8F8FF;
+            border-radius: 6px;
+        }
+        
+        .game-objective {
+            background-color: #FFF8DC;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #FFD700;
+            margin: 15px 0;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            padding: 5px 0;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+            
+            .group-member {
+                padding: 15px;
+                font-size: 0.95em;
+            }
+            
+            .game-name {
+                font-size: 1.5em;
+                padding: 12px;
+            }
+            
+            .release-date {
+                font-size: 1.1em;
+            }
+            
+            .game-objective {
+                padding: 12px;
+                font-size: 1em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .game-name {
+                font-size: 1.3em;
+            }
+            
+            .game-objective {
+                font-size: 0.95em;
+            }
+        }
     </style>
 </head>
 <body>
-    <div id="tela">
-        <img src="img/rato_logo.png" alt="logo">
+    <div class="container">
+        <h1>Sobre o Grupo</h1>
+        
+        <h2>Integrantes do Grupo</h2>
+        <div class="group-member">
+            <strong>Nome:</strong> Èvelyn<br>
+            <strong>Descrição:</strong> Atuou no desenvolvimento do front-end
+        </div>
+        <div class="group-member">
+            <strong>Nome:</strong> Rebeca<br>
+            <strong>Descrição:</strong> Atuou no desenvolvimento do back-end
+        </div>
+        <div class="group-member">
+            <strong>Nome:</strong> Larah<br>
+            <strong>Descrição:</strong> Atuou no desenvolvimento de recuperar senha
+        </div>
+        <div class="group-member">
+            <strong>Nome:</strong> Victória<br>
+            <strong>Descrição:</strong> Atuou no desenvolvimento do sobre
+        </div>
+        <div class="group-member">
+            <strong>Nome:</strong> Cristina<br>
+            <strong>Descrição:</strong> Atuou na apresentação do trabalho
+        </div>
+        
+        <h2>Nome do Jogo</h2>
+        <p class="game-name"><strong>Acerte o Rato</strong></p>
+        
+        <h2>Tema do Jogo</h2>
+        <p>O jogo é um "Acerte o Rato", onde o jogador tenta acertar um rato virtual em movimento na tela. É uma aplicação lúdica e divertida, promovendo coordenação e rapidez.</p>
+        
+        <div class="game-objective">
+            Objetivo: Acertar o rato antes de sumir, com tempo limitado.
+        </div>
+        
+        <h2>Data de Lançamento</h2>
+        <p class="release-date">31 de outubro de 2025</p>
+        
+        <h2>Tecnologias Utilizadas</h2>
+        <ul>
+            <li><strong>HTML:</strong> Estrutura da página</li>
+            <li><strong>CSS:</strong> Estilização e responsividade</li>
+            <li><strong>JavaScript:</strong> Interatividade, lógica do jogo e navegação</li>
+        </ul>
     </div>
-
 </body>
 </html>
