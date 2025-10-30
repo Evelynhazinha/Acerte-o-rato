@@ -48,10 +48,10 @@ function startRound() {
   const isMobile = window.innerWidth <= 500;
 
   const baseTimecomp = 4000; // tempo inicial comp
-  const baseTimecell = 2000; // tempo inicial celular
+  const baseTimecell = 1000; // tempo inicial celular
   const increment = (round - 1) * 100; // incrementa a cada rodada
   const maxMobileTime = 1000; // mínimo de tempo no celular
-  const maxDesktopTime = 2300; // máximo de tempo no comp
+  const maxDesktopTime = 2100; // máximo de tempo no comp
 
   // define tempo visível do rato
   let timeVisible;
