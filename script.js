@@ -47,17 +47,18 @@ function startRound() {
   const ratsToShow = Math.min(round, 5); // máximo 5 ratos
   const isMobile = window.innerWidth <= 500;
 
-  const baseTime = 1000; // tempo inicial desktop
+  const baseTimecomp = 4000; // tempo inicial comp
+  const baseTimecell = 2000; // tempo inicial celular
   const increment = (round - 1) * 100; // incrementa a cada rodada
-  const maxMobileTime = 1250; // mínimo de tempo no celular
-  const maxDesktopTime = 2000; // máximo de tempo no desktop
+  const maxMobileTime = 1000; // mínimo de tempo no celular
+  const maxDesktopTime = 2300; // máximo de tempo no comp
 
   // define tempo visível do rato
   let timeVisible;
   if (!isMobile) {
-    timeVisible = Math.min(baseTime + increment, maxDesktopTime); // desktop: mais devagar
+    timeVisible = Math.min(baseTimecomp + increment, maxDesktopTime); // comp: mais devagar
   } else {
-    timeVisible = Math.max(baseTime + increment, maxMobileTime); // celular: mais rápido
+    timeVisible = Math.max(baseTimecell + increment, maxMobileTime); // celular: mais rápido
   }
 
   let clickedThisRound = 0;
@@ -98,14 +99,13 @@ function startRound() {
 
 
 function showRat(hole, duration) {
-  let img = document.createElement('img')
-  img.src = 'img/rato.png'
-  img.classList.add('rat')
-  hole.appendChild(img)
+  let rat = document.createElement('div')
+  rat.classList.add('rat')
+  hole.appendChild(rat)
 
   setTimeout(() => {
-    if (hole.contains(img)) {
-      img.remove()
+    if (hole.contains(rat)) {
+      rat.remove()
     }
   }, duration)
 }
