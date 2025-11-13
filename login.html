@@ -65,10 +65,8 @@ body {
     gap: 12px;
 }
 
-#box input[type="text"],
 #box input[type="email"],
-#box input[type="password"],
-#box input[type="date"] {
+#box input[type="password"]{
     width: 95%;
     padding: 10px;
     font-size: 16px;
@@ -80,6 +78,7 @@ body {
     font-family: 'MinhaFonte', Times, serif;
     background-color: burlywood;
     border: rgb(137, 114, 84) 2px solid;
+    width: 14vh;
     border-radius: 5px;
     padding: 12px;
     font-size: 18px;
@@ -131,25 +130,19 @@ a{
 <div id="tela">
     <img src="img/rato_logo.png" alt="logo">
     <div id="box">
-        <h2 style="text-align: center;">Cadastro</h2>
+        <h2 style="text-align: center;">login</h2>
         <form id="form">
-            <label for="nome">Nome:</label><br>
-            <input type="text" id="nome" name="nome"><br>
-
-            <label for="dataNascimento">Data de Nascimento:</label><br>
-            <input type="date" id="dataNascimento" name="dataNascimento"><br>
-
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email"><br>
 
             <label for="senha">Senha:</label><br>
             <input type="password" id="senha" name="senha"><br><br>
 
-            <input type="submit" value="Cadastrar">
+            <input type="submit" value="Entrar">
             <a href="index.html" class="voltar">VOLTAR</a>
         </form>
     </div>
 </div>
-<script src="scriptcad.js"></script>
+<script src="login.js"></script>
 </body>
 </html>

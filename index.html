@@ -12,6 +12,16 @@
             font-weight: normal;
             font-style: normal;
     }
+    @keyframes surgir {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
         #tela {
             display: flex;
@@ -30,6 +40,7 @@
         }
 
         body{
+            animation: surgir 0.9s eases;
             background-color: antiquewhite;
             margin: 0;
             font-family: 'Minhafonte', Times, serif;
@@ -82,7 +93,7 @@
         <img src="img/rato_logo.png" alt="logo" width="450px">
 
         <div id="container">
-            <a href="tela_jogo.html">
+            <a href="login.html">
                 <button id="button">JOGAR</button>
             </a>
             <a href="cadastro.html">
@@ -94,6 +105,7 @@
             <a href="sobre.html">
             <button id="button">sobre</button>
             </a>
+            <script src="index.js"></script>
         </div>
     </div>
 </body>

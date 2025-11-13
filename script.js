@@ -3,6 +3,12 @@ const holes = document.querySelectorAll('.hole')
 const start_btn = document.querySelector('.buttons .start')
 const stop_btn = document.querySelector('.buttons .stop')
 const cursor = document.querySelector('.hammer img')
+const usuarioLogado = JSON.parse(localStorage.getItem("loggedUser"));
+if (!usuarioLogado) {
+    alert("Você precisa fazer login primeiro!");
+    window.location.href = "login.html";
+}
+
 
 let points = 0
 let round = 1

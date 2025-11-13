@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RECUPERAR SENHA - ACERTE O RATO</title>
+    <title> ACERTE O RATO</title>
     <style>
 
     @font-face {
@@ -11,6 +11,15 @@
         src: url('fonts/Minhafonte2.ttf.otf') format('opentype');
         font-weight: normal;
         font-style: normal;
+    }
+
+    #tela {
+        display: flex;
+        flex-direction: column;   
+        justify-content: center;  
+        align-items: center;    
+        height: 100vh;       
+        gap: 20px;             
     }
 
     .tela img {
@@ -21,6 +30,7 @@
         }
 
     body{
+        animation: surgir 0.9s ease;
         background-color: antiquewhite;
         margin: 0;
         font-family: 'Minhafonte', Times, serif;
@@ -32,18 +42,164 @@
         background-repeat: no-repeat; 
         }    
 
+    .container {
+      background: beige;
+      padding: 35px 45px;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      animation: surgir 0.9s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes surgir {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    h1 {
+      font-size: 28px;
+      color: rgb(0, 0, 0);
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    p {
+      font-size: 15px;
+      color: rgb(0, 0, 0);
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    input[type="email"] {
+      width: 90%;
+      padding: 12px 15px;
+      border-radius: 12px;
+      border: 2px solid #ddd;
+      outline: none;
+      font-size: 15px;
+      text-align: center;
+      transition: all 0.3s;
+      background-color: #fff;
+    }
+
+    input[type="email"]:focus {
+      border-color: rgb(137, 114, 84);
+      box-shadow: 0 0 0 3px rgb(203, 194, 184);
+    }
+
+    button {
+    font-family: 'MinhaFonte', Times, serif;
+    background-color: burlywood;
+    border: rgb(137, 114, 84) 2px solid;
+    width: 15vh;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 18px;
+    transition: 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgb(137, 114, 84);
+    }
+
+    .mensagem {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: bold;
+      display: none;
+      font-size: 15px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .voltar {
+    text-align: center;
+    font-family: 'MinhaFonte', Times, serif;
+    background-color: burlywood;
+    border: 2px solid rgb(137, 114, 84);
+    color: black;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 18px;
+    width: 11vh;        
+    float: center;       
+    transition: 0.2s;
+    text-decoration: none;
+    display: block;
+    margin: 6px auto 0 auto;
+    }
+
+    .voltar:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgb(137, 114, 84);
+      cursor: pointer;
+    }
+
     @media (max-width: 500px) {
         .tela img {
         max-width: 80vw;   
         margin-bottom: 1vh;
     }
+    .container {
+        padding: 25px;
+    }
+      
+      h1 {
+        font-size: 24px;
+    }
 }
     </style>
-</head>
+</head> 
 <body>
     <div id="tela">
         <img src="img/rato_logo.png" alt="logo">
+        <div class="container">
+        <h1>Recuperar Senha</h1>
+        <p>Digite o e-mail da sua conta para receber o link de recuperacao.</p>
+        
+        <div class="form-group">
+        <input type="email" id="email" placeholder="Seu e-mail aqui">
+        </div>
+        
+        <button onclick="enviarRecuperacao()">Enviar</button>
+        
+        <div class="mensagem" id="mensagem"></div>
+        
+        <a href="index.html" class="voltar">Voltar</a>
     </div>
+
 </body>
 <script src="scriptrec.js"></script>
 </html>
